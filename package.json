@@ -1,0 +1,19 @@
+{
+  "name": "ascii-discord-bot",
+  "version": "1.0.0",
+  "description": "Discord bot for ASCII image/video conversion and photomosaic composition",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "deploy-commands": "node deploy-commands.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.15.3",
+    "canvas": "^2.11.2",
+    "node-fetch": "^2.7.0",
+    "fluent-ffmpeg": "^2.1.2",
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "gifencoder": "^2.0.1",
+    "dotenv": "^16.4.5"
+  }
+}
