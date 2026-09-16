@@ -8,10 +8,10 @@ Converts images and videos to ASCII art, and builds photomosaics from a set of s
    ```
    npm install
    ```
-2. Copy `.env.example` to `.env` and fill in:
-   - `DISCORD_TOKEN` - your bot token
-   - `DISCORD_CLIENT_ID` - your application's client ID
-   - `DISCORD_GUILD_ID` - optional, a guild ID for instant command registration during development. Omit for global registration (can take up to an hour to propagate).
+2. Copy `config.example.yaml` to `config.yaml` and fill in:
+   - `discordToken` - your bot token
+   - `discordClientId` - your application's client ID
+   - `discordGuildId` - optional, a guild ID for instant command registration during development. Leave blank for global registration (can take up to an hour to propagate).
 3. In the Discord Developer Portal, enable the **Message Content Intent** for the bot (required for mention-based auto-convert and for collecting images during a compose session).
 4. Register the slash commands:
    ```

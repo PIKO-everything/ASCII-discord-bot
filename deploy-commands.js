@@ -1,13 +1,13 @@
-require('dotenv').config();
 const { REST, Routes } = require('discord.js');
+const CONFIG = require("./config");
 const commands = require("./commands");
 
-const token = process.env.DISCORD_TOKEN;
-const clientId = process.env.DISCORD_CLIENT_ID;
-const guildId = process.env.DISCORD_GUILD_ID;
+const token = CONFIG.discordToken;
+const clientId = CONFIG.discordClientId;
+const guildId = CONFIG.discordGuildId;
 
 if (!token || !clientId) {
-  console.error("DISCORD_TOKEN and DISCORD_CLIENT_ID must be set.");
+  console.error("discordToken and discordClientId must be set in config.yaml.");
   process.exit(1);
 }
 

@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 const fs = require("fs");
 const path = require("path");
 const { Client, GatewayIntentBits, Partials, Collection, AttachmentBuilder } = require('discord.js');
@@ -15,9 +13,9 @@ const commands = require("./commands");
 
 if (!fs.existsSync(CONFIG.tmpDir)) fs.mkdirSync(CONFIG.tmpDir, { recursive: true });
 
-const DISCORD_TOKEN = process.env.DISCORD_TOKEN || '';
+const DISCORD_TOKEN = CONFIG.discordToken;
 if (!DISCORD_TOKEN) {
-  console.error("DISCORD_TOKEN is not set. Set it as an environment variable before starting the bot.");
+  console.error("discordToken is not set. Add it to config.yaml before starting the bot.");
   process.exit(1);
 }
 

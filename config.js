@@ -1,6 +1,19 @@
 const path = require("path");
+const fs = require("fs");
+const yaml = require("js-yaml");
+
+const configPath = path.join(__dirname, "config.yaml");
+let fileConfig = {};
+
+if (fs.existsSync(configPath)) {
+  fileConfig = yaml.load(fs.readFileSync(configPath, "utf8")) || {};
+}
 
 const CONFIG = {
+  discordToken: fileConfig.discordToken || "",
+  discordClientId: fileConfig.discordClientId || "",
+  discordGuildId: fileConfig.discordGuildId || "",
+
   defaultAsciiWidth: 80,
   minAsciiWidth: 10,
   maxAsciiWidth: 300,
